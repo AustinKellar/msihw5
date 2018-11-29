@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var get_posts_url = "{{=URL('api', 'get_posts')}}";
+</script>
+{{end}}
+
+<div class="main_content">
+
+    <div id="vue-div" class="display:none">
+        <div class="bulletin">
+          <div class="container">
+            <div class="half post-container" v-for="post in posts">
+              ${ post.post_content }
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>
